@@ -238,17 +238,5 @@
             "rate": 3.6,
             "count": 145
         }
-    },
-    {
-        "category": "Laptop",
-        "description": "Mac Pro",
-        "id": 100,
-        "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        "price": 8000.95,
-        "rating": {
-            "count": 1200,
-            "rate": 4.3
-        },
-        "title": "Mac Pro"
     }
 ]

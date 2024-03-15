@@ -43,4 +43,27 @@ def create_product():
     save_products_data(products)
     return new_product
 
+@app.route('/products/<int:product_id>',methods=['PUT'])
+def update_product(product_id):
+    products = load_products_data()
+    product = None
+
+    for p in products:
+        if p["id"] == product_id:
+            product = p
+            break
+
+    updated_product = request.json #Data recieved from front end
+    product.update(updated_product)
+    save_products_data(products)
+    return updated_product
+
+@app.route('/products/<int:product_id>',methods=['DELETE'])
+def delete_product(product_id):
+    products = load_products_data()
+    
+    updated_list =list(filter(lambda p: p["id"] != product_id,products))
+    save_products_data(updated_list)
+    return 'Deleted Successfully', 204
+
 app.run(debug=True)
